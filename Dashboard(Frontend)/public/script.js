@@ -17,11 +17,12 @@ document.getElementById('login-form')?.addEventListener('submit', async (e) => {
   const password = document.getElementById('password').value;
 
   try {
-    const res = await fetch('http://industry-dust-monitor-production-a405.up.railway.app/api/login', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ email, password }),
-    });
+    const res = await fetch('https://industry-dust-monitor-production-a405.up.railway.app/login', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ email, password }),
+    credentials: 'include' // include cookies if needed
+  });
 
     const data = await res.json();
     if (res.ok) {
@@ -47,11 +48,12 @@ document.getElementById('register-form')?.addEventListener('submit', async (e) =
   const password = document.getElementById('reg-password').value;
 
   try {
-    const res = await fetch('http://industry-dust-monitor-production-a405.up.railway.app/api/register', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ username, email, password }),
-    });
+    const res = await fetch('https://industry-dust-monitor-production-a405.up.railway.app/login', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ email, password }),
+    credentials: 'include' // include cookies if needed
+  });
 
     if (res.ok) {
       alert('Registration successful! You can now log in.');
