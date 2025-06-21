@@ -15,7 +15,7 @@ export const AuthProvider = ({ children }) => {
 
     const login = async (email, password) => {
         try {
-            const res = await axios.post("http://industry-dust-monitor-production-a405.up.railway.app/api/login", { email, password });
+            const res = await axios.post("http://industry-dust-monitor-production-a405.up.railway.app/login", { email, password });
             setToken(res.data.token);
             localStorage.setItem("token", res.data.token);
             setUser(res.data.user);
