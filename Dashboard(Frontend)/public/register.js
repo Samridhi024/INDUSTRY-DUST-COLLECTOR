@@ -6,7 +6,7 @@ document.getElementById('register-form')?.addEventListener('submit', async (e) =
     const password = document.getElementById('reg-password').value;
   
     try {
-      const res = await fetch('http://industry-dust-monitor-production.up.railway.app/api/register', {
+      const res = await fetch('http://industry-dust-monitor-production-a405.up.railway.app/api/register', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ username, email, password }),
